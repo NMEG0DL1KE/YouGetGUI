@@ -8,3 +8,5 @@ MP3 Conversion: Oh, and after you've grabbed your video, we throw in the option 
 Open Source and Free: This beauty's open source, and there are no fees or strings attached. It's all yours to use.
 
 No Restrictions: When we say "no restrictions," we mean it. Size? Nope. Location? Nah. Type of video? YouGet's got your back, no matter what.
+
+![yougetpreview](https://github.com/NMEG0DL1KE/YouGetGUI/assets/128245144/eb1e2b53-a030-4e48-9e0e-738ab041493b)
