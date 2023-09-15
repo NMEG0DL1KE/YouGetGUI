@@ -9,4 +9,5 @@ Open Source and Free: This beauty's open source, and there are no fees or string
 
 No Restrictions: When we say "no restrictions," we mean it. Size? Nope. Location? Nah. Type of video? YouGet's got your back, no matter what.
 
-![yougetpreview](https://github.com/NMEG0DL1KE/YouGetGUI/assets/128245144/eb1e2b53-a030-4e48-9e0e-738ab041493b)
+
+![yougetpreview](https://github.com/NMEG0DL1KE/YouGetGUI/assets/128245144/b588c803-b740-415b-aab9-ba5a10ccf2a7)
