@@ -144,14 +144,16 @@ namespace YouGetGUI
             {
                 conversionStatusLabel.Text = "Status:";
                 TitleLabel.Text = "Title";
+                LengthLabel.Text = "Length: Loading..."; // Add this line to show "Loading..." initially
+
                 // Extract the video ID from the YouTube URL
                 string videoId = ExtractVideoId(videoUrl);
                 StatusIdicator.Visible = false;
                 StatusindicatorRed.Visible = true;
                 downloadProgressBar.Value = 0;
+
                 // Fetch the video information
                 var videoInfo = await youtubeClient.Videos.GetAsync(videoId);
-
 
                 if (!string.IsNullOrEmpty(videoId))
                 {
@@ -171,17 +173,20 @@ namespace YouGetGUI
                             {
                                 thumbnailPictureBox.Image = Image.FromStream(ms);
                                 TitleLabel.Text = videoInfo.Title;
+                                LengthLabel.Text = $"Length: {videoInfo.Duration}"; // Display the duration
+                                AuthorLabel.Text = $"Author: {videoInfo.Author}";
                                 downloadProgressBar.Value = 100;
-                                downloadStatusLabel.Text = "Image Downlaoded";
+                                downloadStatusLabel.Text = "Image Downloaded";
                                 StatusIdicator.Visible = true;
                                 StatusindicatorRed.Visible = false;
-
                             }
                         }
                         else
                         {
                             // Display a placeholder image or set the PictureBox to null
                             thumbnailPictureBox.Image = Properties.Resources._1486486298_arrow_down_download_downloads_downloading_save_81238; // Use the placeholder image
+                            LengthLabel.Text = "Length: N/A"; // display duration
+                            AuthorLabel.Text = "Author: N/A";
                         }
                     }
                 }
@@ -189,7 +194,9 @@ namespace YouGetGUI
                 {
                     // Handle the case where the video ID cannot be extracted
                     Console.WriteLine("Invalid YouTube URL.");
-                    downloadStatusLabel.Text = "Invaild URL";
+                    downloadStatusLabel.Text = "Invalid URL";
+                    LengthLabel.Text = "Length: N/A";
+                    AuthorLabel.Text = "Author: N/A";
                     thumbnailPictureBox.Image = null; // Clear the PictureBox
                 }
             }
@@ -197,7 +204,9 @@ namespace YouGetGUI
             {
                 // Handle any errors that may occur while fetching the thumbnail
                 Console.WriteLine($"An error occurred: {ex.Message}");
-                downloadStatusLabel.Text = "Invaild URL";
+                downloadStatusLabel.Text = "Invalid URL";
+                LengthLabel.Text = "Length: N/A";
+                AuthorLabel.Text = "Author: N/A";
                 thumbnailPictureBox.Image = null; // Clear the PictureBox
             }
         }
@@ -250,6 +259,11 @@ namespace YouGetGUI
                     outputDirectoryTextBox.Text = folderDialog.SelectedPath;
                 }
             }
+        }
+
+        private void LengthLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

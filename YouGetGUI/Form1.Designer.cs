@@ -41,8 +41,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.OutputSelect = new System.Windows.Forms.Button();
-            this.thumbnailPictureBox = new System.Windows.Forms.PictureBox();
-            this.downloadButton = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -53,19 +51,23 @@
             this.label3 = new System.Windows.Forms.Label();
             this.TitleLabel = new System.Windows.Forms.Label();
             this.downloadProgressBar = new System.Windows.Forms.ProgressBar();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.AuthorLabel = new System.Windows.Forms.Label();
+            this.LengthLabel = new System.Windows.Forms.Label();
             this.StatusindicatorRed = new System.Windows.Forms.PictureBox();
             this.StatusIdicator = new System.Windows.Forms.PictureBox();
+            this.thumbnailPictureBox = new System.Windows.Forms.PictureBox();
+            this.downloadButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panelTitleBar.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.thumbnailPictureBox)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StatusindicatorRed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StatusIdicator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.thumbnailPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,7 +76,7 @@
             this.conversionStatusLabel.AccessibleName = "conversionStatusLabel";
             this.conversionStatusLabel.AutoSize = true;
             this.conversionStatusLabel.BackColor = System.Drawing.Color.Transparent;
-            this.conversionStatusLabel.Location = new System.Drawing.Point(9, 226);
+            this.conversionStatusLabel.Location = new System.Drawing.Point(9, 237);
             this.conversionStatusLabel.Name = "conversionStatusLabel";
             this.conversionStatusLabel.Size = new System.Drawing.Size(37, 13);
             this.conversionStatusLabel.TabIndex = 0;
@@ -84,7 +86,7 @@
             // 
             this.downloadStatusLabel.AutoSize = true;
             this.downloadStatusLabel.BackColor = System.Drawing.Color.Transparent;
-            this.downloadStatusLabel.Location = new System.Drawing.Point(342, 226);
+            this.downloadStatusLabel.Location = new System.Drawing.Point(342, 237);
             this.downloadStatusLabel.Name = "downloadStatusLabel";
             this.downloadStatusLabel.Size = new System.Drawing.Size(103, 13);
             this.downloadStatusLabel.TabIndex = 1;
@@ -185,33 +187,6 @@
             this.OutputSelect.UseVisualStyleBackColor = true;
             this.OutputSelect.Click += new System.EventHandler(this.OutputSelect_Click);
             // 
-            // thumbnailPictureBox
-            // 
-            this.thumbnailPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.thumbnailPictureBox.Location = new System.Drawing.Point(244, 6);
-            this.thumbnailPictureBox.Name = "thumbnailPictureBox";
-            this.thumbnailPictureBox.Size = new System.Drawing.Size(221, 92);
-            this.thumbnailPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.thumbnailPictureBox.TabIndex = 7;
-            this.thumbnailPictureBox.TabStop = false;
-            // 
-            // downloadButton
-            // 
-            this.downloadButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.downloadButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.downloadButton.Image = global::YouGetGUI.Properties.Resources.film_save;
-            this.downloadButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.downloadButton.Location = new System.Drawing.Point(8, 65);
-            this.downloadButton.Name = "downloadButton";
-            this.downloadButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.downloadButton.Size = new System.Drawing.Size(217, 28);
-            this.downloadButton.TabIndex = 4;
-            this.downloadButton.Text = "Download";
-            this.downloadButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.downloadButton.UseMnemonic = false;
-            this.downloadButton.UseVisualStyleBackColor = false;
-            this.downloadButton.Click += new System.EventHandler(this.downloadButton_Click);
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.groupBox2);
@@ -303,16 +278,47 @@
             // 
             // downloadProgressBar
             // 
-            this.downloadProgressBar.Location = new System.Drawing.Point(195, 226);
+            this.downloadProgressBar.Location = new System.Drawing.Point(195, 237);
             this.downloadProgressBar.Name = "downloadProgressBar";
             this.downloadProgressBar.Size = new System.Drawing.Size(141, 14);
             this.downloadProgressBar.TabIndex = 13;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "control_play_blue.png");
+            this.imageList1.Images.SetKeyName(1, "heart.png");
+            // 
+            // AuthorLabel
+            // 
+            this.AuthorLabel.AutoSize = true;
+            this.AuthorLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AuthorLabel.Location = new System.Drawing.Point(138, 218);
+            this.AuthorLabel.Name = "AuthorLabel";
+            this.AuthorLabel.Size = new System.Drawing.Size(41, 13);
+            this.AuthorLabel.TabIndex = 15;
+            this.AuthorLabel.Text = "Author:";
+            this.AuthorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.AuthorLabel.UseMnemonic = false;
+            // 
+            // LengthLabel
+            // 
+            this.LengthLabel.Image = global::YouGetGUI.Properties.Resources.clock;
+            this.LengthLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LengthLabel.Location = new System.Drawing.Point(13, 212);
+            this.LengthLabel.Name = "LengthLabel";
+            this.LengthLabel.Size = new System.Drawing.Size(119, 25);
+            this.LengthLabel.TabIndex = 14;
+            this.LengthLabel.Text = "Length:";
+            this.LengthLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LengthLabel.Click += new System.EventHandler(this.LengthLabel_Click);
             // 
             // StatusindicatorRed
             // 
             this.StatusindicatorRed.BackgroundImage = global::YouGetGUI.Properties.Resources.trafficlight_red_40428;
             this.StatusindicatorRed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.StatusindicatorRed.Location = new System.Drawing.Point(456, 226);
+            this.StatusindicatorRed.Location = new System.Drawing.Point(457, 237);
             this.StatusindicatorRed.Name = "StatusindicatorRed";
             this.StatusindicatorRed.Size = new System.Drawing.Size(15, 14);
             this.StatusindicatorRed.TabIndex = 12;
@@ -323,11 +329,38 @@
             this.StatusIdicator.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("StatusIdicator.BackgroundImage")));
             this.StatusIdicator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.StatusIdicator.InitialImage = ((System.Drawing.Image)(resources.GetObject("StatusIdicator.InitialImage")));
-            this.StatusIdicator.Location = new System.Drawing.Point(456, 226);
+            this.StatusIdicator.Location = new System.Drawing.Point(457, 237);
             this.StatusIdicator.Name = "StatusIdicator";
             this.StatusIdicator.Size = new System.Drawing.Size(15, 14);
             this.StatusIdicator.TabIndex = 11;
             this.StatusIdicator.TabStop = false;
+            // 
+            // thumbnailPictureBox
+            // 
+            this.thumbnailPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.thumbnailPictureBox.Location = new System.Drawing.Point(244, 6);
+            this.thumbnailPictureBox.Name = "thumbnailPictureBox";
+            this.thumbnailPictureBox.Size = new System.Drawing.Size(221, 87);
+            this.thumbnailPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.thumbnailPictureBox.TabIndex = 7;
+            this.thumbnailPictureBox.TabStop = false;
+            // 
+            // downloadButton
+            // 
+            this.downloadButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.downloadButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.downloadButton.Image = global::YouGetGUI.Properties.Resources.film_save;
+            this.downloadButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.downloadButton.Location = new System.Drawing.Point(8, 65);
+            this.downloadButton.Name = "downloadButton";
+            this.downloadButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.downloadButton.Size = new System.Drawing.Size(217, 28);
+            this.downloadButton.TabIndex = 4;
+            this.downloadButton.Text = "Download";
+            this.downloadButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.downloadButton.UseMnemonic = false;
+            this.downloadButton.UseVisualStyleBackColor = false;
+            this.downloadButton.Click += new System.EventHandler(this.downloadButton_Click);
             // 
             // pictureBox1
             // 
@@ -339,19 +372,14 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "control_play_blue.png");
-            this.imageList1.Images.SetKeyName(1, "heart.png");
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(481, 246);
+            this.ClientSize = new System.Drawing.Size(484, 259);
+            this.Controls.Add(this.AuthorLabel);
+            this.Controls.Add(this.LengthLabel);
             this.Controls.Add(this.downloadProgressBar);
             this.Controls.Add(this.StatusindicatorRed);
             this.Controls.Add(this.StatusIdicator);
@@ -372,7 +400,6 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.thumbnailPictureBox)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -380,6 +407,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StatusindicatorRed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StatusIdicator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.thumbnailPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -415,6 +443,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button OutputSelect;
+        private System.Windows.Forms.Label LengthLabel;
+        private System.Windows.Forms.Label AuthorLabel;
     }
 }
 

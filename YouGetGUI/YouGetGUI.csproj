@@ -143,6 +143,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="getglue_g_6719.ico" />
+    <None Include="Resources\star.png" />
+    <None Include="Resources\clock.png" />
     <Content Include="yougeticon.ico" />
     <None Include="Resources\cog.png" />
     <None Include="Resources\yougetlogo.png" />
