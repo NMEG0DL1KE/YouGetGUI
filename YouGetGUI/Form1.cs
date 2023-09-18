@@ -26,7 +26,7 @@ namespace YouGetGUI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            StatusIdicator.Visible= false;
+            StatusIdicator.Visible = false;
             tabControl1.ImageList = imageList1; // Assign the ImageList to the TabControl
             tabPage1.ImageIndex = 0; // Set the image for tabPage1
             tabPage2.ImageIndex = 1; // Set the image for tabPage2
@@ -151,19 +151,19 @@ namespace YouGetGUI
                 downloadProgressBar.Value = 0;
                 // Fetch the video information
                 var videoInfo = await youtubeClient.Videos.GetAsync(videoId);
-              
+
 
                 if (!string.IsNullOrEmpty(videoId))
                 {
                     // Construct the thumbnail URL using the video ID
                     var thumbnailUrl = $"https://i.ytimg.com/vi/{videoId}/hqdefault.jpg";
+                    downloadProgressBar.Value = 20;
 
                     // Fetch the image data with a user agent
                     using (var webClient = new WebClient())
                     {
                         webClient.Headers.Add("User-Agent", "Mozilla/5.0"); // Add a user agent
                         var imageBytes = webClient.DownloadData(thumbnailUrl);
-
                         // Check if the downloaded data is a valid image
                         if (IsValidImage(imageBytes))
                         {
@@ -171,6 +171,11 @@ namespace YouGetGUI
                             {
                                 thumbnailPictureBox.Image = Image.FromStream(ms);
                                 TitleLabel.Text = videoInfo.Title;
+                                downloadProgressBar.Value = 100;
+                                downloadStatusLabel.Text = "Image Downlaoded";
+                                StatusIdicator.Visible = true;
+                                StatusindicatorRed.Visible = false;
+
                             }
                         }
                         else
@@ -184,6 +189,7 @@ namespace YouGetGUI
                 {
                     // Handle the case where the video ID cannot be extracted
                     Console.WriteLine("Invalid YouTube URL.");
+                    downloadStatusLabel.Text = "Invaild URL";
                     thumbnailPictureBox.Image = null; // Clear the PictureBox
                 }
             }
@@ -191,6 +197,7 @@ namespace YouGetGUI
             {
                 // Handle any errors that may occur while fetching the thumbnail
                 Console.WriteLine($"An error occurred: {ex.Message}");
+                downloadStatusLabel.Text = "Invaild URL";
                 thumbnailPictureBox.Image = null; // Clear the PictureBox
             }
         }

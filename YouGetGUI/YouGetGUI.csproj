@@ -48,8 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>getglue_g_6719.ico</ApplicationIcon>
+    <ApplicationIcon>yougeticon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="AngleSharp, Version=1.0.4.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
       <HintPath>..\packages\AngleSharp.1.0.4\lib\net472\AngleSharp.dll</HintPath>
@@ -142,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="getglue_g_6719.ico" />
+    <Content Include="yougeticon.ico" />
     <None Include="Resources\cog.png" />
     <None Include="Resources\yougetlogo.png" />
   </ItemGroup>

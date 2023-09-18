@@ -40,6 +40,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.OutputSelect = new System.Windows.Forms.Button();
             this.thumbnailPictureBox = new System.Windows.Forms.PictureBox();
             this.downloadButton = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -56,7 +57,6 @@
             this.StatusIdicator = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.OutputSelect = new System.Windows.Forms.Button();
             this.panelTitleBar.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -104,6 +104,7 @@
             this.videoUrlTextBox.Name = "videoUrlTextBox";
             this.videoUrlTextBox.Size = new System.Drawing.Size(160, 20);
             this.videoUrlTextBox.TabIndex = 3;
+            this.videoUrlTextBox.Text = "https://www.youtube.com/watch?v=JV_9EocLlXM";
             this.videoUrlTextBox.TextChanged += new System.EventHandler(this.videoUrlTextBox_TextChanged);
             // 
             // label1
@@ -173,6 +174,16 @@
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // OutputSelect
+            // 
+            this.OutputSelect.Location = new System.Drawing.Point(198, 40);
+            this.OutputSelect.Name = "OutputSelect";
+            this.OutputSelect.Size = new System.Drawing.Size(27, 22);
+            this.OutputSelect.TabIndex = 8;
+            this.OutputSelect.Text = "...";
+            this.OutputSelect.UseVisualStyleBackColor = true;
+            this.OutputSelect.Click += new System.EventHandler(this.OutputSelect_Click);
             // 
             // thumbnailPictureBox
             // 
@@ -277,9 +288,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(6, 25);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.Size = new System.Drawing.Size(116, 13);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Discord :";
+            this.label3.Text = "Discord : erzPRZXHVe";
             // 
             // TitleLabel
             // 
@@ -335,16 +346,6 @@
             this.imageList1.Images.SetKeyName(0, "control_play_blue.png");
             this.imageList1.Images.SetKeyName(1, "heart.png");
             // 
-            // OutputSelect
-            // 
-            this.OutputSelect.Location = new System.Drawing.Point(198, 40);
-            this.OutputSelect.Name = "OutputSelect";
-            this.OutputSelect.Size = new System.Drawing.Size(27, 22);
-            this.OutputSelect.TabIndex = 8;
-            this.OutputSelect.Text = "...";
-            this.OutputSelect.UseVisualStyleBackColor = true;
-            this.OutputSelect.Click += new System.EventHandler(this.OutputSelect_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,6 +364,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "YouGet - YouTube Downloader & MP3 Converter";
             this.Load += new System.EventHandler(this.Form1_Load);
