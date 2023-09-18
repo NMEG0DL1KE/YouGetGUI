@@ -1,4 +1,4 @@
-YouGet v1.0.1 - C# .NET
+YouGet v1.0.2 - C# .NET
 Lightning-Fast Downloads: We're talking speeds that match up to YouTube Premium. You won't be twiddling your thumbs waiting for your downloads anymore.
 
 Dynamic Preview: No more guesswork. Just pop the URL into the YouTube box, and bam! You get an instant preview of the video you're eyeing.
